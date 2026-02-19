@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <title>Lagan Bus Booking | Elite Travel Sri Lanka</title>
+    <meta name="description" content="Sri Lanka's premier long-distance coach service. Book seats online for Colombo, Batticaloa, Kalmunai, and more." />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+              display: ['"Playfair Display"', 'serif'],
+            },
+            colors: {
+              primary: {
+                DEFAULT: '#0066FF',
+                light: '#4d94ff',
+                dark: '#0047b3',
+              },
+              silver: {
+                50: '#f8fafc',
+                100: '#f1f5f9',
+                200: '#e2e8f0',
+                300: '#cbd5e1',
+                400: '#94a3b8',
+                500: '#64748b',
+              },
+            },
+            boxShadow: {
+              'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
+              'glow': '0 0 20px rgba(0, 102, 255, 0.3)',
+              'inner-light': 'inset 0 2px 4px 0 rgba(255, 255, 255, 0.3)',
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+              'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'logo-reveal': 'logoReveal 1.2s cubic-bezier(0.23, 1, 0.32, 1) forwards',
+              'text-slide': 'textSlide 0.8s ease-out 0.5s forwards',
+              'loader': 'loader 2.5s cubic-bezier(0.65, 0, 0.35, 1) forwards',
+              'blob': 'blob 10s infinite',
+              'shimmer': 'shimmer 2.5s linear infinite',
+              'drive': 'drive 0.6s ease-in-out infinite',
+              'fume': 'fume 1.5s ease-out infinite',
+              'road-move': 'roadMove 1s linear infinite',
+              'bus-cross': 'busCross 2.5s linear infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              logoReveal: {
+                '0%': { opacity: '0', transform: 'scale(0.8) translateY(20px)' },
+                '100%': { opacity: '1', transform: 'scale(1) translateY(0)' },
+              },
+              textSlide: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              loader: {
+                '0%': { width: '0%' },
+                '100%': { width: '100%' },
+              },
+              blob: {
+                '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                '100%': { transform: 'translate(0px, 0px) scale(1)' },
+              },
+              shimmer: {
+                '0%': { backgroundPosition: '200% 0' },
+                '100%': { backgroundPosition: '-200% 0' },
+              },
+              drive: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-3px)' },
+              },
+              fume: {
+                '0%': { transform: 'translate(0, 0) scale(0.5)', opacity: '0' },
+                '20%': { opacity: '0.6' },
+                '100%': { transform: 'translate(-20px, -15px) scale(2)', opacity: '0' },
+              },
+              roadMove: {
+                '0%': { backgroundPosition: '0 0' },
+                '100%': { backgroundPosition: '-30px 0' }
+              },
+              busCross: {
+                '0%': { left: '-10%' },
+                '100%': { left: '110%' }
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: #0f172a; }
+      ::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
+      ::-webkit-scrollbar-thumb:hover { background: #0066FF; }
+      
+      .glass-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+      }
+      .dark .glass-card {
+        background: rgba(15, 23, 42, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      
+      .animation-delay-2000 {
+        animation-delay: 2s;
+      }
+      .animation-delay-4000 {
+        animation-delay: 4s;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "jspdf": "https://esm.sh/jspdf@^4.1.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.574.0",
+    "sweetalert2": "https://esm.sh/sweetalert2@^11.26.18"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-silver-50 dark:bg-slate-950 text-slate-900 dark:text-white antialiased transition-colors duration-300 selection:bg-primary/30 selection:text-primary-dark">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
